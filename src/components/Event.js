@@ -6,3 +6,23 @@
 //              datetime of event
 //              CREATE event lives in CreateEvent.js !
 //              ALSO : User will be able to (on login success) mark 'attending'
+
+//DATA section
+import React, {useState,useEffect} from 'react';
+
+//LOGIC section
+ const Event=(props)=>{
+     //DATA section
+
+     //LOGIC section
+
+     //RETURN section
+    return(
+        <div className='event'>
+            <p>This is the EVENT component !</p>
+        </div>
+    )
+}
+
+//RETURN section
+export default Event;

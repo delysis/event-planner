@@ -9,17 +9,19 @@
 
 //DATA section
 import React, {useState,useEffect} from 'react';
+import EditEvent from './EditEvent';
 
 //LOGIC section
  const Event=(props)=>{
      //DATA section
-    const showEdit = props;
+    const {showEdit,setShowEdit} = useState(1);
      //LOGIC section
-    showEdit = true;
+    
      //RETURN section
     return(
         <div className='event'>
             <p>This is the EVENT component !</p>
+            {showEdit && <EditEvent />}
         </div>
     )
 }

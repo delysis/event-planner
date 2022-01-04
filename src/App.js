@@ -28,7 +28,7 @@ function App(props) {
       <Event />
       </Route>
 
-     {  props.showEdit && <EditEvent />}
+ 
       
       <CreateEvent />
      
@@ -37,3 +37,4 @@ function App(props) {
 }
 
 export default App;
+// {  props.showEdit && <EditEvent />}

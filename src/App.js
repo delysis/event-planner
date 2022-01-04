@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+//DATA section
+import Event from './components/Event';
+import CreateEvent from './components/CreateEvent';
+import Events from './components/Events';
+import Login from './components/Login';
 
-function App() {
+import {Route, Link} from 'react-router-dom';
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>I am the app component! It's empty, just like my creator :=( </h1>
+
+        <Link to='/login'>Click on ME to log IN!</Link>
+          <br></br>
+        <Link to='/events'>Click on ME to view EVENTS!</Link>
+          <br></br>
+        <Link to='/create-event'>Click on ME to start creating an EVENT!</Link>
+
+        <Route path='/login'>
+        <Login />
+        </Route>
+
+       <Route path='/events'>
+       <Events />
+        </Route>
+
+      <Route path='/event'>
+      <Event />
+      </Route>
+
+ 
+      <Route path='/create-event'>
+      <CreateEvent />
+      </Route>
+      
+     
     </div>
   );
 }
 
 export default App;
+// {  props.showEdit && <EditEvent />}

@@ -14,13 +14,18 @@ import EditEvent from './EditEvent';
 //LOGIC section
  const Event=(props)=>{
      //DATA section
-    const {showEdit,setShowEdit} = useState(1);
+    const [showEdit,setShowEdit] = useState(false);
      //LOGIC section
+     const showEditSettr=(event)=>{
+         event.preventDefault();
+        setShowEdit(!showEdit);
+     }
     
      //RETURN section
     return(
         <div className='event'>
             <p>This is the EVENT component !</p>
+            <button onClick={showEditSettr}>Click ME to flip show edit bit!</button>
             {showEdit && <EditEvent />}
         </div>
     )

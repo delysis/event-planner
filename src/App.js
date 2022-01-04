@@ -7,22 +7,31 @@ import Login from './components/Login';
 
 import {Route, Link} from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <h1>I am the app component! It's empty, just like my creator :=( </h1>
 
         <Link to='/login'>Click on ME to log IN!</Link>
+          <br></br>
         <Link to='/events'>Click on ME to view EVENTS!</Link>
-        
+
         <Route path='/login'>
         <Login />
         </Route>
-      
+
+       <Route path='/events'>
+       <Events />
+        </Route>
+
+      <Route path='/event'>
       <Event />
-      <EditEvent />
+      </Route>
+
+     {  props.showEdit && <EditEvent />}
+      
       <CreateEvent />
-      <Events />
+     
     </div>
   );
 }

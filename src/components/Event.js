@@ -13,9 +13,9 @@ import React, {useState,useEffect} from 'react';
 //LOGIC section
  const Event=(props)=>{
      //DATA section
-
+    const showEdit = props;
      //LOGIC section
-
+    showEdit = true;
      //RETURN section
     return(
         <div className='event'>

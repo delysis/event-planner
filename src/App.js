@@ -14,6 +14,8 @@ function App(props) {
         <Link to='/login'>Click on ME to log IN!</Link>
           <br></br>
         <Link to='/events'>Click on ME to view EVENTS!</Link>
+          <br></br>
+        <Link to='/create-event'>Click on ME to start creating an EVENT!</Link>
 
         <Route path='/login'>
         <Login />
@@ -28,8 +30,10 @@ function App(props) {
       </Route>
 
  
-      
+      <Route path='/create-event'>
       <CreateEvent />
+      </Route>
+      
      
     </div>
   );

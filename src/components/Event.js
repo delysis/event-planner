@@ -12,6 +12,18 @@ import React, {useState,useEffect} from 'react';
 import EditEvent from './EditEvent';
 
 //LOGIC section
+
+// useEffect(() => {
+    // axiosWithAuth()
+    // .get(`/endpoint/${eventId}`)
+    // .then(res=>{
+        
+    //     setEvent(res); 
+    // }).catch(err=>{
+    //     console.error(err);
+    // })
+// },[]); //'on first mount, do this'
+
  const Event=(props)=>{
      //DATA section
     const [showEdit,setShowEdit] = useState(false);
@@ -24,7 +36,7 @@ import EditEvent from './EditEvent';
      //RETURN section
     return(
         <div className='event'>
-            <p>This is the EVENT component !</p>
+            <p>This is the singular EVENT component !</p>
             <button onClick={showEditSettr}>Click ME to flip show edit bit!</button>
             {showEdit && <EditEvent />}
         </div>

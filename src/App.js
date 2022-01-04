@@ -1,6 +1,5 @@
 //DATA section
 import Event from './components/Event';
-import EditEvent from './components/EditEvent';
 import CreateEvent from './components/CreateEvent';
 import Events from './components/Events';
 import Login from './components/Login';

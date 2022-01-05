@@ -9,13 +9,13 @@ import {Route, Link} from 'react-router-dom';
 function App(props) {
   return (
     <div className="App">
-      <h1>I am the app component! It's empty, just like my creator :=( </h1>
+      <h1>I am the app component! </h1>
 
-        <Link to='/login'>Click on ME to log IN!</Link>
+        <Link to='/login'>Log in</Link>
           <br></br>
-        <Link to='/events'>Click on ME to view EVENTS!</Link>
+        <Link to='/events'>View Events</Link>
           <br></br>
-        <Link to='/create-event'>Click on ME to start creating an EVENT!</Link>
+        <Link to='/create-event'>Host an Event</Link>
 
         <Route path='/login'>
         <Login />

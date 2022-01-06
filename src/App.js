@@ -10,16 +10,10 @@ function App(props) {
   return (
     <div className="App">
       <h1>I am the app component! </h1>
-
-        <Link to='/login'>Log in</Link>
-          <br></br>
+       
         <Link to='/events'>View Events</Link>
           <br></br>
         <Link to='/create-event'>Host an Event</Link>
-
-        <Route path='/login'>
-        <Login />
-        </Route>
 
        <Route path='/events'>
        <Events />
@@ -40,4 +34,3 @@ function App(props) {
 }
 
 export default App;
-// {  props.showEdit && <EditEvent />}

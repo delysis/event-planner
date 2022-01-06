@@ -2,7 +2,6 @@
 import Event from './components/Event';
 import CreateEvent from './components/CreateEvent';
 import Events from './components/Events';
-import Login from './components/Login';
 
 import {Route, Link} from 'react-router-dom';
 
@@ -11,10 +10,14 @@ function App(props) {
     <div className="App">
       <h1>I am the app component! </h1>
        
-        <Link to='/events'>View Events</Link>
+       <nav className='navbar'>
+       <Link to='/events'>View Events</Link>
           <br></br>
         <Link to='/create-event'>Host an Event</Link>
-
+        <br></br>
+        <Link to='/'>Take me HOME!</Link>
+       </nav>
+        
        <Route path='/events'>
        <Events />
         </Route>
@@ -23,11 +26,9 @@ function App(props) {
       <Event />
       </Route>
 
- 
       <Route path='/create-event'>
       <CreateEvent />
       </Route>
-      
      
     </div>
   );

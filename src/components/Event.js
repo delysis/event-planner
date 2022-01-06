@@ -10,24 +10,31 @@
 //DATA section
 import React, {useState,useEffect} from 'react';
 import EditEvent from './EditEvent';
+import axiosWithAuth from './utils/axiosWithAuth';
+
+
 
 //LOGIC section
-
-// useEffect(() => {
-    // axiosWithAuth()
-    // .get(`/endpoint/${eventId}`)
-    // .then(res=>{
-        
-    //     setEvent(res); 
-    // }).catch(err=>{
-    //     console.error(err);
-    // })
-// },[]); //'on first mount, do this'
 
  const Event=(props)=>{
      //DATA section
     const [showEdit,setShowEdit] = useState(false);
+    const [event,setEvent] = useState([]);
+
+    const formId = '54de8231dd925535'; //HEY FUTURE CLAIRE: BE SURE TO MOVE THIS SOMEWHERE ELSE AFTER YOU TEST!
+
      //LOGIC section
+
+     useEffect(() => {
+        axiosWithAuth()
+        .get(`/v1beta/forms/${formId}`)
+        .then(res=>{
+            setEvent(res.analyticsdata); 
+        }).catch(err=>{
+            console.error(err);
+        })
+    },[]); //'on first mount, do this'
+
      const showEditSettr=(event)=>{
          event.preventDefault();
         setShowEdit(!showEdit);
@@ -38,6 +45,11 @@ import EditEvent from './EditEvent';
         <div className='event'>
             <p>This is the singular EVENT component !</p>
             <button onClick={showEditSettr}>Click ME to flip show edit bit!</button>
+
+            <div className='gform'>
+            {props.event}
+            </div>
+            
             {showEdit && <EditEvent />}
         </div>
     )

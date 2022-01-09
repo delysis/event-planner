@@ -4,20 +4,26 @@
 //DATA section
 import React, {useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import Calendar from 'react-calendar';
 
 //LOGIC section
  const Events=(props)=>{
      //DATA section
+     const [date,setDate] = useState(new Date());
 
      //LOGIC section
 
      //RETURN section
     return(
         <div className='events-list'>
-            <p>This is the MULTIPLE-EVENTS  component !</p>
-            <br>
-            </br>
-
+             <h1 className='text-center'>React Calendar</h1>
+      <div className='calendar-container'>
+        <Calendar onChange={setDate} value={date} />
+      </div>
+      <p className='text-center'>
+        <span className='bold'>Selected Date:</span>{' '}
+        {date.toDateString()}
+      </p>
             <Link to='/event'>Click ME to see a single EVENT!</Link>
         </div>
     )

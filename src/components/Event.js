@@ -10,7 +10,8 @@
 //DATA section
 import React, {useState,useEffect} from 'react';
 import EditEvent from './EditEvent';
-import axiosWithAuth from './utils/axiosWithAuth';
+//import axiosWithAuth from './utils/axiosWithAuth';
+import axios from 'axios';
 
 
 
@@ -24,10 +25,10 @@ import axiosWithAuth from './utils/axiosWithAuth';
     const formId = '54de8231dd925535'; //HEY FUTURE CLAIRE: BE SURE TO MOVE THIS SOMEWHERE ELSE AFTER YOU TEST!
 
      //LOGIC section
+     // .get(`/v1beta/forms/${formId}`)
 
      useEffect(() => {
-        axiosWithAuth()
-        .get(`/v1beta/forms/${formId}`)
+       axios.get("https://docs.google.com/forms/u/0/d/1JC-zABOglm4U7-uHkJstAqvpBzEMzAO8ToGH1Y7661I/aggregatestatistics?sid=54de8231dd925535&vc=0&c=0&w=1&flr=0&token=hr48MX4BAAA.bqXz99bgS0mSM9BPt_K7mA.pPf1zbNJxp7eH9_NpB1q7Q")
         .then(res=>{
             setEvent(res.analyticsdata); 
         }).catch(err=>{

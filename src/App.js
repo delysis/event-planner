@@ -41,7 +41,7 @@ const doChange = (name,value) => {
 
            {/* <Link to='/event'>Click ME to see a single EVENT!</Link> */}
        </div>
-       <CreateEvent submit={doSubmit} change={doChange}/>
+       <CreateEvent submit={doSubmit} change={doChange} values={event}/>
     </div>
   );
 }

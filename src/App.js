@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import CreateEvent from './components/CreateEvent';
 import axios from 'axios';
+import {BASE_URL} from './components/utils/baseUrl';
 
 const eventDefault={
   location: '',
@@ -19,7 +20,7 @@ function App() {
 
   const doSubmit = () => {
     //AXIOS! (Sounds like a dang harry potter spell lol)
-  axios.post('https://reqres.in/api/orders',event) //I need a working endpoitn of course...
+  axios.post(BASE_URL,event) //I need a working endpoitn of course...
     .then(res=>{
      setEvent(res.data)
     }).catch(err=>{

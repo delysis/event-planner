@@ -28,7 +28,7 @@ import React from 'react';
      //RETURN section
     return(
         <div className='create-event'>
-            <form id='create-event-id'>
+            <form id='create-event-id' onSubmit={submitHandle}>
             <lable>Location:
                     <input 
                     type='text'
@@ -56,6 +56,7 @@ import React from 'react';
                     
                     />
                 </lable>
+                <input type='submit' id='create-button' value='CREATE your EVENT.' />
             </form>
         </div>
     )

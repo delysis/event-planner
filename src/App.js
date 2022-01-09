@@ -1,5 +1,38 @@
+//DATA SECTION
+import React, {useState} from 'react';
+import CreateEvent from './components/CreateEvent';
+import axios from 'axios';
 
+const eventDefault={
+  location: '',
+  date: '',
+  time: '',
+}
+
+//LOGIC section
 function App() {
+
+  //as always, DATA sectionr::
+  const [event,setEvent] = useState(eventDefault);
+
+  //LOGIC SECTIONR
+
+  const doSubmit = () => {
+    //AXIOS! (Sounds like a dang harry potter spell lol)
+  axios.post('https://reqres.in/api/orders',event) //I need a working endpoitn of course...
+    .then(res=>{
+     setEvent(res.data)
+    }).catch(err=>{
+      console.error(err);
+    })
+    .finally(()=>{setEvent(eventDefault)})
+}
+
+const doChange = (name,value) => {
+  // validate(name,value); //NEEDFUL:: CREATE VALIDATION W YUP
+  setEvent({...event,[name]:value})
+}
+
   return (
     <div className="App">
         <div className='events-list'>   
@@ -7,6 +40,7 @@ function App() {
 
            {/* <Link to='/event'>Click ME to see a single EVENT!</Link> */}
        </div>
+       <CreateEvent submit={doSubmit} change={doChange}/>
     </div>
   );
 }

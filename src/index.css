@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.calendar-styles {
+  border: 0;
+width: 800;
+height: 600;
+/* frame-border: 0;
+scrolling: no; */
+}

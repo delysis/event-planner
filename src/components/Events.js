@@ -2,11 +2,10 @@
 //it will render out all viewable events
 
 //DATA section
-import React, {useState,useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
 
 //LOGIC section
- const Events=(props)=>{
+ const Events=()=>{
      //DATA section
 
      //LOGIC section
@@ -14,15 +13,13 @@ import {Link} from 'react-router-dom';
      //RETURN section
     return(
         <div className='events-list'>
-            <p>This is the MULTIPLE-EVENTS  component !</p>
-            <br>
-            </br>
+           
+            <iframe title='caltitle' id='calendar-styles' src="https://calendar.google.com/calendar/embed?src=hdo5309tq5gop0pul9hcn07isc%40group.calendar.google.com&ctz=America%2FDenver" ></iframe>
 
-            <Link to='/event'>Click ME to see a single EVENT!</Link>
+            {/* <Link to='/event'>Click ME to see a single EVENT!</Link> */}
         </div>
     )
 }
 
 //RETURN section
 export default Events;
-//needful:: will do a map over each event, rendering a link to each in the above Link comp!
